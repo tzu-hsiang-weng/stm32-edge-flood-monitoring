@@ -69,13 +69,19 @@ A CatBoost model serves as the high-capacity teacher. The selected student is a 
 
 The **100% PC–MCU agreement** measures implementation equivalence during replay of the cleaned stream; it is **not classification accuracy**.
 
+## Implementation
+
+The research workflow is primarily implemented in **Python** for data preparation, feature engineering, teacher/student training, evaluation, and artifact generation. The selected decision-tree student is exported to **C99** for resource-constrained deployment on the **STM32L476RG**.
+
+A compact C reference implementation corresponding to the frozen depth-3 tree is included under [`deployment/`](deployment/). It is reconstructed directly from the frozen tree rules for transparency; the complete original STM32Cube firmware project was not included in the uploaded research bundle used to curate this repository.
+
 ## Repository structure
 
 ```text
 .
 ├── README.md
 ├── requirements.txt
-├── src/                     # cleaned and renamed research scripts
+├── src/                     # Python research pipeline
 ├── data/
 │   └── summaries/           # data quality / event / state / training summaries
 ├── artifacts/
@@ -85,6 +91,8 @@ The **100% PC–MCU agreement** measures implementation equivalence during repla
 ├── docs/
 │   └── experiment_protocol.md
 └── deployment/
+    ├── model_inference.c    # C99 reference implementation of the frozen tree
+    ├── model_inference.h    # C99 interface and state definitions
     └── README.md            # STM32 deployment notes
 ```
 
@@ -114,6 +122,7 @@ These files are curated research snapshots rather than a one-click reproduction 
 - [`artifacts/student/final_metrics.csv`](artifacts/student/final_metrics.csv) — selected depth-3 student metrics.
 - [`artifacts/student/feature_spec.csv`](artifacts/student/feature_spec.csv) — 17 causal, edge-computable student features.
 - [`artifacts/student/tree_rules.txt`](artifacts/student/tree_rules.txt) — interpretable depth-3 tree rules.
+- [`deployment/model_inference.c`](deployment/model_inference.c) — C99 reference implementation of the frozen student.
 - [`docs/experiment_protocol.md`](docs/experiment_protocol.md) — split, leakage, and teacher/student protocol.
 
 ## Limitations
