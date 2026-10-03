@@ -1,0 +1,4 @@
+model_role,model_name,core_macro_f1,s1_recall,s2_recall,s3_recall,transition_count,full_cycle_s0_recall,actual_depth,node_count
+teacher,CatBoost raw_s2_weight_2p0,0.6623991513,0.9545454545,0.6176470588,0.9976744186,13,1.0,,
+preliminary_final_student,depth3_confidence_weighted_teacher_guided,0.6127048332,0.9363636364,0.5441176471,0.8930232558,22,1.0,3,15
+aggressive_trigger_control,depth4_confidence_weighted_teacher_guided,0.6462791926,0.9363636364,0.9607843137,0.7465116279,23,1.0,4,29

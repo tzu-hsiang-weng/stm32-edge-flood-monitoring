@@ -1,0 +1,7 @@
+evidence_type,metric,value,pass_or_fail,notes
+features,teacher feature count,44,pass,44 causal water-level features
+feature leakage,feature leakage audit,passed,pass,No label/event/source/split/synthetic metadata/trace/future feature
+Event3 leakage,Event3 train overlap,0,pass,Event3 remains unseen real-only evaluation
+Event3 synthetic usage,Event3 used in synthetic,no,pass,Train-side synthetic only
+KD usage,train teacher output usage,allowed,pass,Train teacher predictions may guide student training
+KD usage,Event3 teacher output usage,evaluation-only,pass,Event3 teacher outputs are not used for student training

@@ -1,0 +1,18 @@
+feature_order,feature_name,feature_role,formula,required_buffer_minutes,causal,edge_computable,uses_fixed_threshold
+1,water_level,current absolute level,current water_level,0,True,True,False
+2,dist_to_alert,distance to fixed alert threshold,ALERT_LINE - water_level,0,True,True,True
+3,dist_to_safe_return,distance from fixed safe-return threshold,water_level - SAFE_RETURN_LINE,0,True,True,True
+4,above_alert_line,fixed alert-line gate,int(water_level >= ALERT_LINE),0,True,True,True
+5,delta_1m,1-minute direction,water_level - water_level.shift(1),1,True,True,False
+6,delta_3m,short direction,water_level - water_level.shift(3),3,True,True,False
+7,delta_5m,S1/S3 short trend,water_level - water_level.shift(5),5,True,True,False
+8,delta_10m,medium short trend,water_level - water_level.shift(10),10,True,True,False
+9,slope_5m,5-minute slope,delta_5m / 5,5,True,True,False
+10,slope_10m,10-minute slope,delta_10m / 10,10,True,True,False
+11,max_5m,recent local max,rolling max over current and previous 4 rows,5,True,True,False
+12,range_10m,short volatility,rolling max previous 9/current - rolling min previous 9/current,10,True,True,False
+13,recent_max_30m,receding-memory recent peak,rolling max over current and previous 29 rows,30,True,True,False
+14,drawdown_from_recent_max_30m,receding-memory drawdown,recent_max_30m - water_level,30,True,True,False
+15,delta_30m,longer trend,water_level - water_level.shift(30),30,True,True,False
+16,slope_30m,longer slope,delta_30m / 30,30,True,True,False
+17,range_30m,longer volatility,rolling max previous 29/current - rolling min previous 29/current,30,True,True,False

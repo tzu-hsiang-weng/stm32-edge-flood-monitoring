@@ -1,0 +1,4 @@
+decision_item,selected_candidate,reason,tradeoff
+best_for_full_4state_control,d3_balanced_control,Higher S3 stability and lower complexity,Lower S2 recall and macro-F1 than d4
+best_for_aggressive_trigger_detection,d4_macro_aggressive,Higher S2 recall and core macro-F1,Lower S3 stability than d3
+final_recommended_student,d3_balanced_control,Better balance for compact four-state semantic control,Still below the teacher and validated on one held-out event

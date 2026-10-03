@@ -1,0 +1,3 @@
+candidate_name,feature_count,actual_depth,node_count,leaf_count,estimated_rule_count,model_file_size_kb,deployment_comment
+d3_balanced_control,17,3,15,8,8,3.1494140625,very compact rule candidate
+d4_macro_aggressive,17,4,29,15,15,4.4619140625,more complex and more aggressive than d3

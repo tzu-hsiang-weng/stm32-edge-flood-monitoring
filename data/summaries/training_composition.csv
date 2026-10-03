@@ -1,0 +1,8 @@
+source,split,fsm_state_name,rows
+real,train_real,S0_STABLE,509
+real,train_real,S1_RISING,115
+real,train_real,S3_RECEDING,158
+synthetic_B2_semdiv_balanced,train_synthetic_B2_semdiv_balanced,S0_STABLE,67
+synthetic_B2_semdiv_balanced,train_synthetic_B2_semdiv_balanced,S1_RISING,113
+synthetic_B2_semdiv_balanced,train_synthetic_B2_semdiv_balanced,S2_FLOOD,97
+synthetic_B2_semdiv_balanced,train_synthetic_B2_semdiv_balanced,S3_RECEDING,304

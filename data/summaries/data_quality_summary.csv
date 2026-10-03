@@ -1,0 +1,2 @@
+row_count,start_time,end_time,expected_minute_count,missing_minutes,duplicated_timestamps,water_level_min,water_level_max,water_level_nan_count,water_level_zero_or_negative_count
+2878,2022-10-16 00:00:00,2022-10-17 23:57:00,2878,0,0,5.67,10.64,0,0

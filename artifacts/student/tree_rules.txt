@@ -1,0 +1,22 @@
+|--- recent_max_30m <= 6.775000
+|   |--- delta_30m <= -0.185000
+|   |   |--- max_5m <= 6.520000
+|   |   |   |--- class: 0
+|   |   |--- max_5m >  6.520000
+|   |   |   |--- class: 3
+|   |--- delta_30m >  -0.185000
+|   |   |--- dist_to_safe_return <= 0.005000
+|   |   |   |--- class: 0
+|   |   |--- dist_to_safe_return >  0.005000
+|   |   |   |--- class: 0
+|--- recent_max_30m >  6.775000
+|   |--- drawdown_from_recent_max_30m <= 0.100993
+|   |   |--- water_level <= 8.008458
+|   |   |   |--- class: 1
+|   |   |--- water_level >  8.008458
+|   |   |   |--- class: 2
+|   |--- drawdown_from_recent_max_30m >  0.100993
+|   |   |--- slope_10m <= 0.000326
+|   |   |   |--- class: 3
+|   |   |--- slope_10m >  0.000326
+|   |   |   |--- class: 0
